@@ -1,4 +1,4 @@
-# Monthly Recurring Revenue (MRR) playbook.
+# Metrics Framework Playbook
 This dbt project provides an example to demonstrate how to a metrics framework. 
 **Check out the full write-up [here](),
 as well as the documentation site for this project [here]().**
