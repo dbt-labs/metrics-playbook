@@ -1,7 +1,7 @@
 {%- set metrics = [
     'metric__new_revenue'
     ]
-    -%}
+-%}
 
 {%- for metric in metrics -%}
 

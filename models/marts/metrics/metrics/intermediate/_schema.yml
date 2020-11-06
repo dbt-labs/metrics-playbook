@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  
+  - name: metrics__unioned
+    description: >
+      This model unions together all models in the metric_models subfolder.
+      IMPORTANT: The unique_id is generated in the format_metric() macro.
+    columns:
+      - name: unique_id
+        tests:
+          - unique
+          - not_null
+          
+  - name: metrics__date_spined
+    columns:
+      - name: unique_id
+        tests:
+          - unique
+          - not_null
+
+  - name: metrics__calculated
+    columns:
+      - name: unique_id
+        tests:
+          - unique
+          - not_null
