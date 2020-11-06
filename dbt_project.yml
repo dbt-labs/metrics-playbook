@@ -19,6 +19,7 @@ clean-targets:
     
 seeds:
   quote_columns: false
+  schema: seeds
 
 models:
   metrics_framework_playbook:
