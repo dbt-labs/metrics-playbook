@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  
+  - name: dim_customers
+    description: This model gets customer info, including aggregated order data.
+    columns:
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
+  
+  - name: fct_orders
+    description: This model gets order info, including aggregated payment data.
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null

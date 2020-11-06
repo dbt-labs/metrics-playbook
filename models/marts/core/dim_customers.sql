@@ -2,7 +2,7 @@ with
 
 customers as (
 
-    select * from {{ ref('stg_customers')}}
+    select * from {{ ref('stg_jaffle_shop__customers')}}
 
 ),
 
@@ -15,6 +15,7 @@ orders as (
 customer_orders as (
 
     select
+    
         customer_id,
 
         min(order_date) as first_order_date,
