@@ -1,6 +1,6 @@
 with
 
-raw_source as (
+metric_source as (
 
     select * from {{ref('fct_orders')}}
 
@@ -9,10 +9,11 @@ raw_source as (
 metric_agg as (
 
     select
-        date(order_date) as date_day,
+    
+        order_date,
         sum(amount) as total_order_revenue
 
-    from raw_source
+    from metric_source
     group by 1
 
 ),
@@ -20,26 +21,28 @@ metric_agg as (
 metric_lagged as (
 
     select
+    
         *,
+        
         lag(total_order_revenue) over (
-            order by date_day
+            order by order_date
         ) as prev_total_order_revenue
 
     from metric_agg
 
 ),
 
-metric_source as (
+metric_final as (
 
     select
-        date_day,
+    
+        order_date,
         
-        (
-            total_order_revenue - coalesce(prev_total_order_revenue,0)
-        ) as total_new_revenue
+        total_order_revenue - coalesce(prev_total_order_revenue,0) 
+        as total_new_revenue
 
     from metric_lagged
 
 )
 
-{{ format_metric('New Order Revenue', 'date_day', 'total_new_revenue') }}
+{{ format_metric('New Order Revenue', 'order_date', 'total_new_revenue') }}
