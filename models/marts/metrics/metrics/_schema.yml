@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  
+  - name: metrics
+    description: > 
+      {{ doc('metrics') }}
+    columns:
+      - name: unique_id
+        tests:
+          - unique
+          - not_null
