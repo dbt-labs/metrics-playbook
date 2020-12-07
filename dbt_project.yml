@@ -1,9 +1,9 @@
 name: 'metrics_framework_playbook'
 version: '1.0.0'
 config-version: 2
-required-dbt-version: ''>=0.18.0'
+require-dbt-version: '>=0.18.0'
 
-profile: 'playbook'
+profile: 'dbt_metrics_playbook'
 
 source-paths: ["models"]
 analysis-paths: ["analysis"]
@@ -19,6 +19,7 @@ clean-targets:
     
 seeds:
   quote_columns: false
+  schema: seeds
 
 models:
   metrics_framework_playbook:
@@ -28,4 +29,5 @@ models:
       +materialized: view
 
 on-run-end:
-  "{{ grant_select_on_schemas(schemas, 'reporter') }}"
+  - "{{ grant_select_on_schemas(schemas, 'reporter') }}"
+  - "{{ grant_select_on_schemas(schemas, 'transformer') }}"

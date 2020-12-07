@@ -1,0 +1,4 @@
+# DBT
+target/
+dbt_modules/
+logs/

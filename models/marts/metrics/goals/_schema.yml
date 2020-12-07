@@ -1,0 +1,11 @@
+version: 2
+
+models:
+    - name: goals
+      description: >
+        {{ doc('goals') }}
+      columns:
+        - name: unique_id
+          tests:
+              - unique
+              - not_null

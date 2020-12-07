@@ -1,0 +1,15 @@
+version: 2
+# NOTE: 
+#   Every model defined within this folder must not change it's
+#   unique and not null tests to another column name.
+
+models:
+    
+  - name: metric__new_revenue
+    description: >
+      This model gets the new revenue when compared to the previous month.
+    columns:
+      - name: unique_id
+        tests:
+          - unique 
+          - not_null
