@@ -12,7 +12,7 @@ To add a KPI goal, you will need to do the following:
 - The `goals.metric_name` should be the same as `metrics.metric_name`. This is important because this field is used to join the KPI goal to its associated metric.
 - Ensure that the file name follows the standardized naming convention: `metric_goals__<metric_name>`. Note that it should follow the same model naming as its associated `metric__<metric_name>` model located in the `models/marts/metrics/base_metrics` folder.
 - Move the file into the project's `data` folder.
-- run dbt seed
+- run `dbt seed`
 - Add the `metric_goals__<metric_name>` model to the `goals__unioned` list.
 
 Tips:

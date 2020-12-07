@@ -1,6 +1,6 @@
 version: 2
 # NOTE: 
-#   Every model defined within this folder must not change it's
+#   Every model defined within this folder must not change its
 #   unique and not null tests to another column name.
 
 models:
