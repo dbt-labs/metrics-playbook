@@ -29,7 +29,7 @@ windowed as (
         *,
         
         row_number() over (
-            partition by date_quarter
+            partition by metric_name, date_quarter
             order by date_day
         ) as day_of_quarter,
         
