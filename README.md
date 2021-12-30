@@ -1,5 +1,5 @@
 # Metrics Framework Playbook
-This dbt project provides an example to demonstrate how to a metrics framework. 
+This dbt project provides an example to demonstrate how to use the metrics framework. 
 **Check out the full write-up (coming soon),
 as well as the documentation site for this project 
 [here](https://www.getdbt.com/metrics-playbook/#!/overview).**
